@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCityAI - City Safety Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🛡️ SafeCityAI</div>
+        <p>Your Smart City Safety Assistant</p>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Stay Safe. Stay Alert.</h1>
+            <p>
+                SafeCityAI provides quick safety information,
+                emergency contacts and helpful safety guidance.
+            </p>
+            <button onclick="showSOS()">🚨 Emergency Help</button>
+        </section>
+
+        <!-- Safety Check -->
+        <section class="card">
+            <h2>📍 Safety Check</h2>
+            <p>Enter your area to get basic safety guidance.</p>
+
+            <div class="input-box">
+                <input
+                    type="text"
+                    id="locationInput"
+                    placeholder="Enter your area"
+                >
+                <button onclick="checkSafety()">Check Safety</button>
+            </div>
+
+            <div id="safetyResult"></div>
+        </section>
+
+        <!-- Emergency Contacts -->
+        <section class="card">
+            <h2>📞 Emergency Contacts</h2>
+
+            <div class="contacts">
+
+                <div class="contact">
+                    <span>🚔</span>
+                    <h3>Police</h3>
+                    <p>112</p>
+                    <button onclick="callNumber('112')">Call</button>
+                </div>
+
+                <div class="contact">
+                    <span>🚑</span>
+                    <h3>Ambulance</h3>
+                    <p>108</p>
+                    <button onclick="callNumber('108')">Call</button>
+                </div>
+
+                <div class="contact">
+                    <span>🔥</span>
+                    <h3>Fire Service</h3>
+                    <p>101</p>
+                    <button onclick="callNumber('101')">Call</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- AI Assistant -->
+        <section class="card">
+            <h2>🤖 SafeCityAI Assistant</h2>
+            <p>Ask a safety-related question.</p>
+
+            <div class="chat-box" id="chatBox">
+                <div class="bot-message">
+                    Hello! I'm SafeCityAI. How can I help you stay safe?
+                </div>
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="text"
+                    id="userQuestion"
+                    placeholder="Type your question..."
+                    onkeypress="handleEnter(event)"
+                >
+                <button onclick="askAI()">Send</button>
+            </div>
+        </section>
+
+        <!-- Safety Tips -->
+        <section class="card">
+            <h2>🛡️ Safety Tips</h2>
+
+            <div class="tips">
+
+                <div class="tip">
+                    <h3>🌙 Night Safety</h3>
+                    <p>Stay in well-lit public areas and keep trusted contacts informed.</p>
+                </div>
+
+                <div class="tip">
+                    <h3>📱 Cyber Safety</h3>
+                    <p>Never share passwords, OTPs or sensitive information with strangers.</p>
+                </div>
+
+                <div class="tip">
+                    <h3>🚶 Travel Safety</h3>
+                    <p>Use trusted transportation and keep your phone charged.</p>
+                </div>
+
+                <div class="tip">
+                    <h3>🔐 Privacy</h3>
+                    <p>Avoid sharing your personal location publicly.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 SafeCityAI | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+    <!-- SOS Modal -->
+    <div id="sosModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSOS()">&times;</span>
+
+            <h2>🚨 Emergency Help</h2>
+
+            <p>
+                If you are in immediate danger, contact the appropriate
+                emergency service or a trusted person.
+            </p>
+
+            <div class="sos-buttons">
+                <button onclick="callNumber('112')">
+                    🚔 Emergency: 112
+                </button>
+
+                <button onclick="callNumber('108')">
+                    🚑 Ambulance: 108
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
